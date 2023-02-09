@@ -1,16 +1,39 @@
-import 'Stack.dart';
+import 'CustomQueue.dart';
+import 'CustomStack.dart';
 
 void main() {
-  Stack<int> numbers = new Stack();
+  CustomStack<int> stackNumbers = new CustomStack();
 
-  /*int number1 = 10;
+  int number1 = 10;
   int number2 = 20;
   int number3 = 30;
-  numbers.push(number1);
-  numbers.push(number2);
-  numbers.push(number3);*/
 
-  print(numbers.getTop());
+  stackNumbers.offer(number1);
+  stackNumbers.offer(number2);
+  stackNumbers.offer(number3);
 
-  print(numbers.toString());
+  print('*** STACK ***\n');
+
+  print(stackNumbers.isEmpty());
+  print(stackNumbers.poll());
+  print(stackNumbers.getTop());
+  print(stackNumbers.toString());
+
+  CustomQueue<int> queueNumbers = new CustomQueue<int>();
+
+  int number4 = 10;
+  int number5 = 20;
+  int number6 = 30;
+
+  queueNumbers.push(number4);
+  queueNumbers.push(number5);
+  queueNumbers.push(number6);
+
+  print('*** QUEUE ***\n');
+
+  print(queueNumbers.isEmpty());
+  queueNumbers.pop();
+  print(queueNumbers.toString());
+  print(queueNumbers.getFirst());
+  print(queueNumbers.toString());
 }
